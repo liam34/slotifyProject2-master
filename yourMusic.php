@@ -6,7 +6,7 @@
     <div class="gridViewContainer">
         <h2>PLAYLISTS</h2>
             <div class="buttonItems">
-                <button class="button slateblue" onclick="creatPlaylist()">NEW PLAYLIST</button>
+                <button class="button slateblue" onclick="createPlaylist()">NEW PLAYLIST</button>
             </div>
 
                     <?php
