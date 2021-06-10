@@ -9,7 +9,7 @@ if(isset($_POST['name']) && isset($_POST['username'])) {
 
 }
 else {
-    echo "Name or username parameters not passed into files";
+    echo "Name or username parameters not passed into file";
 }
 
 ?>
