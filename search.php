@@ -75,7 +75,8 @@ $(function() {
                 </div>
 
                 <div class='trackOptions'>
-                    <img class='optionButton' src='assets/images/icons/more.png'>
+                    <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+                    <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
                 </div>
 
                 <div class='trackDuration'>
@@ -162,33 +163,12 @@ $(function() {
 
 </div>
 
-<div class="gridViewContainer">
-    <h2>ALBUMS</h2>
-                    <?php
-                        
-                        // Fetch album details
-                        $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE title LIKE '$term%'LIMIT 10");
-                        
-                        if(mysqli_num_rows($albumQuery) == 0) {
-                            echo "<span class='noResults'>No albums found matching " . $term . "</span>";
-                    
-                        }
 
-                        while($row = mysqli_fetch_array($albumQuery)) {   
 
-                        echo "<div class='gridViewItem'>
-                                <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
-                                    <img src='" . $row['artworkPath'] . "'>              
-                                    
-                                    <div class='gridViewInfo'>"
-                                    . $row['title']. 
-                                    "</div>
-                                </span>                      
-                                </div>";
-                            }
-                        ?>
-
-</div>
+<nav class="optionsMenu">
+        <input type="hidden" class="songId">
+        <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>       
+</nav>
 
 
 
