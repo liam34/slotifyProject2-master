@@ -1,6 +1,6 @@
 <?php
 
-include 'includes/config.php';
+include ("includes/config.php");
 include ("includes/classes/User.php");
 include ("includes/classes/Artist.php");
 include ("includes/classes/Album.php");
@@ -8,10 +8,10 @@ include ("includes/classes/Song.php");
 include ("includes/classes/Playlist.php");
 
 if (isset($_SESSION['userLoggedIn'])) {
-  
+ 
   $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
   $username = $userLoggedIn->getUsername();
-  echo "<script>userLoggedIn = '$username()';</script>";
+  echo "<script>userLoggedIn = '$username';</script>";
 }
 else {
   header("Location: register.php");
