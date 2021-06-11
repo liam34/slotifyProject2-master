@@ -203,7 +203,7 @@ function setTrack(trackId, newPlaylist, play) {
 
             if(play == true) {
               playSong();
-          }
+            }
 
           });
 

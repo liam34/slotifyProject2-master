@@ -1,13 +1,13 @@
 <?php
 
-include 'includes/config.php';
-include 'includes/classes/Account.php';
-include 'includes/classes/Constants.php';
+include("includes/config.php");
+include("includes/classes/Account.php");
+include("includes/classes/Constants.php");
 
 $account = new Account($con);
 
-include 'includes/handlers/register-handler.php';
-include 'includes/handlers/login-handler.php';
+include("includes/handlers/register-handler.php");
+include("includes/handlers/login-handler.php");
 
 // Remembers user submitted form values
 function getInputValue($name) {
